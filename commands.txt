@@ -1,0 +1,29 @@
+
+db.Cars.insert({
+  Manufacturer: "Ford",
+  Model: "Focus",
+  Registration: "152D1234",
+  EngineSize: 1.6,
+  Year: 2015,
+  Colour: "Silver",
+  Mileage: 20000,
+  FuelType: "Petrol",
+  Transmissions: "Manual",
+  Extras: ["Leather Seats", "Alloy Wheels", "Sat-Nav"],
+  Price: 25000
+}) 
+
+db.Cars.insert({
+  Manufacturer: "BMW",
+  Model: "520D",
+  Registration: "10KY6257",
+  EngineSize: 2.0,
+  Year: 2010,
+  Colour: "White",
+  Mileage: 64000,
+  FuelType: "Diesel",
+  Transmissions: "Automatic",
+  Extras: ["Leather Seats", "Alloy Wheels", "Sat-Nav", "Climate Control", "Phone Kit"],
+  Price: 18750
+}) 
+
