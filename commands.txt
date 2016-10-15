@@ -27,3 +27,39 @@ db.Cars.insert({
   Price: 18750
 }) 
 
+function insertCar(Manufacturer,Model,Registration,EngineSize,Year,Colour,Mileage,FuelType,Transmission,Extras,Price)
+{db.Cars.insert({Manufacturer:Manufacturer,Model:Model,Registration:Registration,EngineSize:EngineSize,Year:Year,Colour:Colour,
+Mileage:Mileage,FuelType:FuelType,Transmission:Transmission,Extras:Extras,Price:Price});}
+
+
+insertCar("Ford","Shelby Mustang","780FZL",5.4,1967,"Silver",50000,"Petrol","Manual",["None"],120000)
+
+insertCar("Nissan","Micra","08KY4658",1.2,2008,"Blue",78000,"Petrol","Manual",["Phone Kit"],4000)
+
+db.Cars.find({ "_id" : ObjectId("580222faf78b1e700ba95505") }) 
+
+db.Cars.find({ _id : ObjectId("580222faf78b1e700ba95505") }, { Manufacturer : 1 }) 
+
+db.Cars.find({ _id : ObjectId("580222faf78b1e700ba95505") }, { Manufacturer : 0 }) 
+
+db.Cars.find( 
+  { Price : { $lt : 20000} },
+{ Manufacturer:1,Model:1,Price: 1 } )
+
+var price_range = {}
+price_range['$lt'] = 100000 
+price_range['$gt'] = 10000 
+db.Cars.find( 
+  { Manufacturer : /^B/, Price : price_range },
+{ Manufacturer: 1 } ) 
+
+db.Cars.find( 
+  { Year : { $gt : 2000} },
+{ Manufacturer:1,Model:1,Price: 1, Year:1 } )
+
+db.Cars.find(
+{ Transmission : 'Manual' },
+{ _id : 0} 
+)
+
+ 
