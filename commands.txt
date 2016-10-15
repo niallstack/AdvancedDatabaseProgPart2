@@ -18,7 +18,7 @@ db.Cars.insert({
   Model: "520D",
   Registration: "10KY6257",
   EngineSize: 2.0,
-  Year: 2010,
+  Year: 2008,
   Colour: "White",
   FuelType: "Diesel",
   Transmissions: "Automatic",
@@ -30,14 +30,12 @@ db.Cars.insert({
 
 VIN OwnerID Owner OwnerAddress
 
-function insertCar(Manufacturer,Model,Registration,EngineSize,Year,Colour,FuelType,Transmission,VIN,OwnerID,Owner,OwnerAddress)
-{db.Cars.insert({Manufacturer:Manufacturer,Model:Model,Registration:Registration,EngineSize:EngineSize,Year:Year,Colour:Colour,
-FuelType:FuelType,Transmission:Transmission,VIN:VIN,OwnerID:OwnerID,Owner:Owner,OwnerAddress:OwnerAddress});}
+function insertCar(Manufacturer,Model,Registration,EngineSize,Year,Colour,FuelType,Transmission,VIN,OwnerID,Owner,OwnerAddress){db.Cars.insert({Manufacturer:Manufacturer,Model:Model,Registration:Registration,EngineSize:EngineSize,Year:Year,Colour:Colour,FuelType:FuelType,Transmission:Transmission,VIN:VIN,OwnerID:OwnerID,Owner:Owner,OwnerAddress:OwnerAddress});}
 
 
-insertCar("Ford","Shelby Mustang","780FZL",5.4,1967,"Silver",50000,"Petrol","Manual",["None"],120000)
+insertCar("Ford","Shelby Mustang","780FZL",5.4,1967,"Silver","Petrol","Manual","F7294224461","4959762ZR","Niall Stack",["Listowel, Kerry"])
 
-insertCar("Nissan","Micra","08KY4658",1.2,2008,"Blue",78000,"Petrol","Manual",["Phone Kit"],4000)
+insertCar("Nissan","Micra","08KY4658",1.2,2008,"Blue","Petrol","Manual",["Phone Kit"],4000)
 
 db.Cars.find({ "_id" : ObjectId("580222faf78b1e700ba95505") }) 
 
