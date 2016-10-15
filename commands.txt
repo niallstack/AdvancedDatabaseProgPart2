@@ -4,13 +4,13 @@ db.Cars.insert({
   Model: "Focus",
   Registration: "152D1234",
   EngineSize: 1.6,
-  Year: 2015,
   Colour: "Silver",
-  Mileage: 20000,
   FuelType: "Petrol",
   Transmissions: "Manual",
-  Extras: ["Leather Seats", "Alloy Wheels", "Sat-Nav"],
-  Price: 25000
+  VIN: "A1274927479",
+  OwnerID:"1234567FA",
+  Owner: "John Smith",
+  OwnerAddress: "123 Fake Street Dublin"
 }) 
 
 db.Cars.insert({
@@ -20,16 +20,19 @@ db.Cars.insert({
   EngineSize: 2.0,
   Year: 2010,
   Colour: "White",
-  Mileage: 64000,
   FuelType: "Diesel",
   Transmissions: "Automatic",
-  Extras: ["Leather Seats", "Alloy Wheels", "Sat-Nav", "Climate Control", "Phone Kit"],
-  Price: 18750
+  VIN: "B5244927479",
+  OwnerID:"7939567ZB",
+  Owner: "Pete O'Sullivan",
+  OwnerAddress: ["The Square", "Listowel", "Kerry"]
 }) 
 
-function insertCar(Manufacturer,Model,Registration,EngineSize,Year,Colour,Mileage,FuelType,Transmission,Extras,Price)
+VIN OwnerID Owner OwnerAddress
+
+function insertCar(Manufacturer,Model,Registration,EngineSize,Year,Colour,FuelType,Transmission,VIN,OwnerID,Owner,OwnerAddress)
 {db.Cars.insert({Manufacturer:Manufacturer,Model:Model,Registration:Registration,EngineSize:EngineSize,Year:Year,Colour:Colour,
-Mileage:Mileage,FuelType:FuelType,Transmission:Transmission,Extras:Extras,Price:Price});}
+FuelType:FuelType,Transmission:Transmission,VIN:VIN,OwnerID:OwnerID,Owner:Owner,OwnerAddress:OwnerAddress});}
 
 
 insertCar("Ford","Shelby Mustang","780FZL",5.4,1967,"Silver",50000,"Petrol","Manual",["None"],120000)
