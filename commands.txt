@@ -26,7 +26,24 @@ db.Cars.insert({
   OwnerID:"7939567ZB",
   Owner: "Pete O'Sullivan",
   OwnerAddress: ["The Square", "Listowel", "Kerry"]
-}) 
+})
+
+
+db.Cars.insert({
+  Manufacturer: "Nissan",
+  Model: "Micra",
+  Registration: "08C1024",
+  EngineSize: 1.2,
+  Year: 2008,
+  Colour: "Blue",
+  FuelType: "Petrol",
+  Transmissions: "Manual",
+  VIN: "F729422446",
+  OwnerID:"4959762ZR",
+  Owner: "Sarah Jones",
+  OwnerAddress: ["Main Street", "Cork City", "Co. Cork"],
+  WrittenOff:true
+})
 
 VIN OwnerID Owner OwnerAddress
 
@@ -34,8 +51,6 @@ function insertCar(Manufacturer,Model,Registration,EngineSize,Year,Colour,FuelTy
 
 
 insertCar("Ford","Shelby Mustang","780FZL",5.4,1967,"Silver","Petrol","Manual","F7294224461","4959762ZR","Niall Stack",["Listowel, Kerry"])
-
-insertCar("Nissan","Micra","08KY4658",1.2,2008,"Blue","Petrol","Manual")
 
 db.Cars.find({ "_id" : ObjectId("580222faf78b1e700ba95505") }) 
 
@@ -72,5 +87,10 @@ db.Cars.findOne({ _id : ObjectId("58024c97a41e3ba43a80b097") })
 db.Cars.update({ _id : ObjectId("58024c97a41e3ba43a80b097") },{$set:{"BodyType":"Saloon"}})
 
 db.Cars.update({ _id : ObjectId("58024c97a41e3ba43a80b097")},{ $inc: {Year : 1}})
+
+db.Cars.update({ _id : ObjectId("58024c97a41e3ba43a80b097")},{ $unset: {2010 : 1}})
+
+
+var WrittenOffCars = {WrittenOff : true}
 
 
