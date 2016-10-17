@@ -93,4 +93,6 @@ db.Cars.update({ _id : ObjectId("58024c97a41e3ba43a80b097")},{ $unset: {2010 : 1
 
 var WrittenOffCars = {WrittenOff : true}
 
+db.Cars.remove(WrittenOffCars)
+
 
