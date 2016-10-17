@@ -35,17 +35,21 @@ function insertCar(Manufacturer,Model,Registration,EngineSize,Year,Colour,FuelTy
 
 insertCar("Ford","Shelby Mustang","780FZL",5.4,1967,"Silver","Petrol","Manual","F7294224461","4959762ZR","Niall Stack",["Listowel, Kerry"])
 
-insertCar("Nissan","Micra","08KY4658",1.2,2008,"Blue","Petrol","Manual",["Phone Kit"],4000)
+insertCar("Nissan","Micra","08KY4658",1.2,2008,"Blue","Petrol","Manual")
 
 db.Cars.find({ "_id" : ObjectId("580222faf78b1e700ba95505") }) 
 
-db.Cars.find({ _id : ObjectId("580222faf78b1e700ba95505") }, { Manufacturer : 1 }) 
+db.Cars.find({ _id : ObjectId("580252116aea504933303f81") }, { Manufacturer : 1 }) 
 
-db.Cars.find({ _id : ObjectId("580222faf78b1e700ba95505") }, { Manufacturer : 0 }) 
+db.Cars.find({ _id : ObjectId("580252116aea504933303f81") }, { Manufacturer : 0 }) 
 
 db.Cars.find( 
-  { Price : { $lt : 20000} },
-{ Manufacturer:1,Model:1,Price: 1 } )
+{ Manufacturer:'Ford'},
+{ Manufacturer:1,Model:1})
+
+db.Cars.find( 
+{ Model:/Shelby/},
+{ Manufacturer:1,Model:1})
 
 var price_range = {}
 price_range['$lt'] = 100000 
@@ -63,4 +67,10 @@ db.Cars.find(
 { _id : 0} 
 )
 
- 
+db.Cars.findOne({ _id : ObjectId("58024c97a41e3ba43a80b097") }) 
+
+db.Cars.update({ _id : ObjectId("58024c97a41e3ba43a80b097") },{$set:{"BodyType":"Saloon"}})
+
+db.Cars.update({ _id : ObjectId("58024c97a41e3ba43a80b097")},{ $inc: {Year : 1}})
+
+
