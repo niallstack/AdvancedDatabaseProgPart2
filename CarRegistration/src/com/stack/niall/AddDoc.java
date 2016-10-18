@@ -17,6 +17,7 @@ import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.ParallelScanOptions;
 import com.mongodb.ServerAddress;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Niall
@@ -41,42 +42,318 @@ public class AddDoc extends javax.swing.JFrame {
 
         addDocPnl = new javax.swing.JPanel();
         addDocLbl = new javax.swing.JLabel();
+        submitBtn = new javax.swing.JButton();
+        manufacturerLbl = new javax.swing.JLabel();
+        modelLbl = new javax.swing.JLabel();
+        regLbl = new javax.swing.JLabel();
+        engSizeLbl = new javax.swing.JLabel();
+        yearLbl = new javax.swing.JLabel();
+        fuelTypeLbl = new javax.swing.JLabel();
+        transLbl = new javax.swing.JLabel();
+        colourLbl = new javax.swing.JLabel();
+        ownerIDLbl = new javax.swing.JLabel();
+        ownerLbl = new javax.swing.JLabel();
+        vinLbl = new javax.swing.JLabel();
+        ownerAddLbl = new javax.swing.JLabel();
+        writtenOffLbl = new javax.swing.JLabel();
+        manufacturerTxt = new javax.swing.JTextField();
+        modelTxt = new javax.swing.JTextField();
+        regTxt = new javax.swing.JTextField();
+        yearTxt = new javax.swing.JTextField();
+        engSizeTxt = new javax.swing.JTextField();
+        colourTxt = new javax.swing.JTextField();
+        fuelTxt = new javax.swing.JTextField();
+        tranTxt = new javax.swing.JTextField();
+        vinTxt = new javax.swing.JTextField();
+        ownerIDTxt = new javax.swing.JTextField();
+        ownerTxt = new javax.swing.JTextField();
+        ownerAddressTxt = new javax.swing.JTextField();
+        writtenOffTxt = new javax.swing.JTextField();
+        backBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        addDocLbl.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        addDocPnl.setBackground(new java.awt.Color(255, 255, 255));
+
+        addDocLbl.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        addDocLbl.setForeground(new java.awt.Color(0, 153, 153));
         addDocLbl.setText("Add a Document");
+
+        submitBtn.setBackground(new java.awt.Color(255, 255, 255));
+        submitBtn.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        submitBtn.setForeground(new java.awt.Color(0, 102, 102));
+        submitBtn.setText("Submit");
+        submitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitBtnActionPerformed(evt);
+            }
+        });
+
+        manufacturerLbl.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        manufacturerLbl.setForeground(new java.awt.Color(0, 153, 153));
+        manufacturerLbl.setText("Manufacturer:");
+
+        modelLbl.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        modelLbl.setForeground(new java.awt.Color(0, 153, 153));
+        modelLbl.setText("Model:");
+
+        regLbl.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        regLbl.setForeground(new java.awt.Color(0, 153, 153));
+        regLbl.setText("Registration:");
+
+        engSizeLbl.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        engSizeLbl.setForeground(new java.awt.Color(0, 153, 153));
+        engSizeLbl.setText("Engine Size:");
+
+        yearLbl.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        yearLbl.setForeground(new java.awt.Color(0, 153, 153));
+        yearLbl.setText("Year:");
+
+        fuelTypeLbl.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        fuelTypeLbl.setForeground(new java.awt.Color(0, 153, 153));
+        fuelTypeLbl.setText("Fuel Type:");
+
+        transLbl.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        transLbl.setForeground(new java.awt.Color(0, 153, 153));
+        transLbl.setText("Transmission:");
+
+        colourLbl.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        colourLbl.setForeground(new java.awt.Color(0, 153, 153));
+        colourLbl.setText("Colour:");
+
+        ownerIDLbl.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        ownerIDLbl.setForeground(new java.awt.Color(0, 153, 153));
+        ownerIDLbl.setText("OwnerID");
+
+        ownerLbl.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        ownerLbl.setForeground(new java.awt.Color(0, 153, 153));
+        ownerLbl.setText("Owner");
+
+        vinLbl.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        vinLbl.setForeground(new java.awt.Color(0, 153, 153));
+        vinLbl.setText("VIN");
+
+        ownerAddLbl.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        ownerAddLbl.setForeground(new java.awt.Color(0, 153, 153));
+        ownerAddLbl.setText("Owner Address:");
+
+        writtenOffLbl.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        writtenOffLbl.setForeground(new java.awt.Color(0, 153, 153));
+        writtenOffLbl.setText("Written Off:");
+
+        manufacturerTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                manufacturerTxtActionPerformed(evt);
+            }
+        });
+
+        backBtn.setBackground(new java.awt.Color(255, 255, 255));
+        backBtn.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        backBtn.setForeground(new java.awt.Color(0, 102, 102));
+        backBtn.setText("Back");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout addDocPnlLayout = new javax.swing.GroupLayout(addDocPnl);
         addDocPnl.setLayout(addDocPnlLayout);
         addDocPnlLayout.setHorizontalGroup(
             addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addDocPnlLayout.createSequentialGroup()
-                .addGap(177, 177, 177)
-                .addComponent(addDocLbl)
-                .addContainerGap(192, Short.MAX_VALUE))
+                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(addDocPnlLayout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(addDocPnlLayout.createSequentialGroup()
+                                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(regLbl)
+                                    .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(manufacturerLbl, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(modelLbl))
+                                    .addComponent(engSizeLbl)
+                                    .addComponent(yearLbl)
+                                    .addComponent(colourLbl)
+                                    .addComponent(fuelTypeLbl))
+                                .addGap(41, 41, 41)
+                                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(manufacturerTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(regTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(modelTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(engSizeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(yearTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(colourTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(fuelTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(addDocPnlLayout.createSequentialGroup()
+                                        .addGap(20, 20, 20)
+                                        .addComponent(addDocLbl))))
+                            .addGroup(addDocPnlLayout.createSequentialGroup()
+                                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(transLbl)
+                                    .addComponent(vinLbl)
+                                    .addComponent(ownerIDLbl)
+                                    .addComponent(ownerLbl)
+                                    .addComponent(ownerAddLbl)
+                                    .addComponent(writtenOffLbl))
+                                .addGap(24, 24, 24)
+                                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(vinTxt)
+                                        .addComponent(tranTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(ownerIDTxt)
+                                        .addComponent(ownerTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
+                                        .addComponent(writtenOffTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(ownerAddressTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(addDocPnlLayout.createSequentialGroup()
+                        .addGap(119, 119, 119)
+                        .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42)))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
         addDocPnlLayout.setVerticalGroup(
             addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addDocPnlLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
                 .addComponent(addDocLbl)
-                .addContainerGap(480, Short.MAX_VALUE))
+                .addGap(55, 55, 55)
+                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(manufacturerLbl)
+                    .addComponent(manufacturerTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(modelLbl)
+                    .addComponent(modelTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(regLbl)
+                    .addComponent(regTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(engSizeLbl)
+                    .addComponent(engSizeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(yearLbl)
+                    .addComponent(yearTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(colourLbl)
+                    .addComponent(colourTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fuelTypeLbl)
+                    .addComponent(fuelTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(transLbl)
+                    .addComponent(tranTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(vinLbl)
+                    .addComponent(vinTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ownerIDLbl)
+                    .addComponent(ownerIDTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ownerLbl)
+                    .addComponent(ownerTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ownerAddLbl)
+                    .addComponent(ownerAddressTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(writtenOffLbl)
+                    .addComponent(writtenOffTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
+                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(addDocPnl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(addDocPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(addDocPnl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(addDocPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void manufacturerTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manufacturerTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_manufacturerTxtActionPerformed
+
+    private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
+        try{
+		
+         // To connect to mongodb server
+         MongoClient mongoClient = new MongoClient( "localhost" , 27017 );
+			
+         // Now connect to your databases
+         DB db = mongoClient.getDB( "CarRegistration" );
+         System.out.println("Connect to database successfully");
+         
+         DBCollection coll = db.getCollection("Cars");
+         System.out.println("Collection Cars selected successfully");
+         
+          BasicDBObject doc = new BasicDBObject("Manufacturer", manufacturerTxt.getText()).
+            append("Model", modelTxt.getText()).
+            append("Registration", regTxt.getText()).
+            append("EngineSize", engSizeTxt.getText()).
+            append("Year", yearTxt.getText()).
+            append("Colour", colourTxt.getText()).
+            append("FuelType", fuelTxt.getText()).
+            append("Transmission", tranTxt.getText()).
+            append("VIN", vinTxt.getText()).
+            append("OwnerID", ownerIDTxt.getText()).
+            append("Owner", ownerTxt.getText()).
+            append("OwnerAddress", ownerAddressTxt.getText()).
+            append("WrittenOff", writtenOffTxt.getText());
+                 
+				
+         coll.insert(doc);
+         //System.out.println("Document inserted successfully");
+         JOptionPane.showMessageDialog(null, "Document inserted successfully");
+
+         manufacturerTxt.setText("");
+         modelTxt.setText("");
+         regTxt.setText("");
+         engSizeTxt.setText("");
+         yearTxt.setText("");
+         colourTxt.setText("");
+         fuelTxt.setText("");
+         tranTxt.setText("");
+         vinTxt.setText("");
+         ownerIDTxt.setText("");
+         ownerTxt.setText("");
+         ownerAddressTxt.setText("");
+         writtenOffTxt.setText("");
+			
+      }catch(Exception e){
+         System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+      }
+    }//GEN-LAST:event_submitBtnActionPerformed
+
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        dispose();
+        MainMenu JFrame =new MainMenu();
+        JFrame.setVisible(true);
+    }//GEN-LAST:event_backBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -112,28 +389,41 @@ public class AddDoc extends javax.swing.JFrame {
             }
         });
         
-        try{
-		
-         // To connect to mongodb server
-         MongoClient mongoClient = new MongoClient( "localhost" , 27017 );
-			
-         // Now connect to your databases
-         DB db = mongoClient.getDB( "CarRegistration" );
-         System.out.println("Connect to database successfully");
-         DBCollection coll = db.getCollection("Cars");
-         System.out.println("Collection Cars selected successfully");
-         
-         //boolean auth = db.authenticate(myUserName, myPassword);
-         //System.out.println("Authentication: "+auth);
-			
-      }catch(Exception e){
-         System.err.println( e.getClass().getName() + ": " + e.getMessage() );
-      }
+        
+        
    
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel addDocLbl;
     private javax.swing.JPanel addDocPnl;
+    private javax.swing.JButton backBtn;
+    private javax.swing.JLabel colourLbl;
+    private javax.swing.JTextField colourTxt;
+    private javax.swing.JLabel engSizeLbl;
+    private javax.swing.JTextField engSizeTxt;
+    private javax.swing.JTextField fuelTxt;
+    private javax.swing.JLabel fuelTypeLbl;
+    private javax.swing.JLabel manufacturerLbl;
+    private javax.swing.JTextField manufacturerTxt;
+    private javax.swing.JLabel modelLbl;
+    private javax.swing.JTextField modelTxt;
+    private javax.swing.JLabel ownerAddLbl;
+    private javax.swing.JTextField ownerAddressTxt;
+    private javax.swing.JLabel ownerIDLbl;
+    private javax.swing.JTextField ownerIDTxt;
+    private javax.swing.JLabel ownerLbl;
+    private javax.swing.JTextField ownerTxt;
+    private javax.swing.JLabel regLbl;
+    private javax.swing.JTextField regTxt;
+    private javax.swing.JButton submitBtn;
+    private javax.swing.JTextField tranTxt;
+    private javax.swing.JLabel transLbl;
+    private javax.swing.JLabel vinLbl;
+    private javax.swing.JTextField vinTxt;
+    private javax.swing.JLabel writtenOffLbl;
+    private javax.swing.JTextField writtenOffTxt;
+    private javax.swing.JLabel yearLbl;
+    private javax.swing.JTextField yearTxt;
     // End of variables declaration//GEN-END:variables
 }

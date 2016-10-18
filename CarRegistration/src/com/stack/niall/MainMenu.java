@@ -29,19 +29,38 @@ public class MainMenu extends javax.swing.JFrame {
 
         MainMenuPanel = new javax.swing.JPanel();
         menuLbl = new javax.swing.JLabel();
+        addDocBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        MainMenuPanel.setBackground(new java.awt.Color(255, 255, 255));
+
         menuLbl.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
+        menuLbl.setForeground(new java.awt.Color(0, 153, 153));
         menuLbl.setText("Car Registration - Menu");
+
+        addDocBtn.setBackground(new java.awt.Color(255, 255, 255));
+        addDocBtn.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        addDocBtn.setForeground(new java.awt.Color(0, 153, 153));
+        addDocBtn.setText("Add Document");
+        addDocBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addDocBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout MainMenuPanelLayout = new javax.swing.GroupLayout(MainMenuPanel);
         MainMenuPanel.setLayout(MainMenuPanelLayout);
         MainMenuPanelLayout.setHorizontalGroup(
             MainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainMenuPanelLayout.createSequentialGroup()
-                .addGap(154, 154, 154)
-                .addComponent(menuLbl)
+                .addGroup(MainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MainMenuPanelLayout.createSequentialGroup()
+                        .addGap(154, 154, 154)
+                        .addComponent(menuLbl))
+                    .addGroup(MainMenuPanelLayout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addComponent(addDocBtn)))
                 .addContainerGap(162, Short.MAX_VALUE))
         );
         MainMenuPanelLayout.setVerticalGroup(
@@ -49,7 +68,9 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(MainMenuPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(menuLbl)
-                .addContainerGap(482, Short.MAX_VALUE))
+                .addGap(67, 67, 67)
+                .addComponent(addDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(358, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -65,6 +86,13 @@ public class MainMenu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void addDocBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDocBtnActionPerformed
+        dispose();
+        AddDoc JFrame =new AddDoc();
+        JFrame.setVisible(true);
+
+    }//GEN-LAST:event_addDocBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -103,6 +131,7 @@ public class MainMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MainMenuPanel;
+    private javax.swing.JButton addDocBtn;
     private javax.swing.JLabel menuLbl;
     // End of variables declaration//GEN-END:variables
 }
