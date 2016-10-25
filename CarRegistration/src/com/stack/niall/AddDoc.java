@@ -70,6 +70,7 @@ public class AddDoc extends javax.swing.JFrame {
         ownerAddressTxt = new javax.swing.JTextField();
         writtenOffTxt = new javax.swing.JTextField();
         backBtn = new javax.swing.JButton();
+        backBtn1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -157,14 +158,25 @@ public class AddDoc extends javax.swing.JFrame {
             }
         });
 
+        backBtn1.setBackground(new java.awt.Color(255, 255, 255));
+        backBtn1.setForeground(new java.awt.Color(0, 153, 153));
+        backBtn1.setText("<");
+        backBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtn1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout addDocPnlLayout = new javax.swing.GroupLayout(addDocPnl);
         addDocPnl.setLayout(addDocPnlLayout);
         addDocPnlLayout.setHorizontalGroup(
             addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addDocPnlLayout.createSequentialGroup()
-                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(addDocPnlLayout.createSequentialGroup()
-                        .addGap(69, 69, 69)
+                        .addContainerGap()
+                        .addComponent(backBtn1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                         .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(addDocPnlLayout.createSequentialGroup()
                                 .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,7 +228,11 @@ public class AddDoc extends javax.swing.JFrame {
         addDocPnlLayout.setVerticalGroup(
             addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addDocPnlLayout.createSequentialGroup()
-                .addComponent(addDocLbl)
+                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(addDocLbl)
+                    .addGroup(addDocPnlLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(backBtn1)))
                 .addGap(55, 55, 55)
                 .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(manufacturerLbl)
@@ -355,6 +371,12 @@ public class AddDoc extends javax.swing.JFrame {
         JFrame.setVisible(true);
     }//GEN-LAST:event_backBtnActionPerformed
 
+    private void backBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtn1ActionPerformed
+        dispose();
+        MainMenu JFrame =new MainMenu();
+        JFrame.setVisible(true);
+    }//GEN-LAST:event_backBtn1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -398,6 +420,7 @@ public class AddDoc extends javax.swing.JFrame {
     private javax.swing.JLabel addDocLbl;
     private javax.swing.JPanel addDocPnl;
     private javax.swing.JButton backBtn;
+    private javax.swing.JButton backBtn1;
     private javax.swing.JLabel colourLbl;
     private javax.swing.JTextField colourTxt;
     private javax.swing.JLabel engSizeLbl;

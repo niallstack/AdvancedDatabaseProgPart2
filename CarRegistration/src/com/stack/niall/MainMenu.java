@@ -30,6 +30,7 @@ public class MainMenu extends javax.swing.JFrame {
         MainMenuPanel = new javax.swing.JPanel();
         menuLbl = new javax.swing.JLabel();
         addDocBtn = new javax.swing.JButton();
+        viewDocBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,10 +43,20 @@ public class MainMenu extends javax.swing.JFrame {
         addDocBtn.setBackground(new java.awt.Color(255, 255, 255));
         addDocBtn.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         addDocBtn.setForeground(new java.awt.Color(0, 153, 153));
-        addDocBtn.setText("Add Document");
+        addDocBtn.setText("Add Documents");
         addDocBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addDocBtnActionPerformed(evt);
+            }
+        });
+
+        viewDocBtn.setBackground(new java.awt.Color(255, 255, 255));
+        viewDocBtn.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        viewDocBtn.setForeground(new java.awt.Color(0, 153, 153));
+        viewDocBtn.setText("View Documents");
+        viewDocBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewDocBtnActionPerformed(evt);
             }
         });
 
@@ -54,14 +65,15 @@ public class MainMenu extends javax.swing.JFrame {
         MainMenuPanelLayout.setHorizontalGroup(
             MainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainMenuPanelLayout.createSequentialGroup()
-                .addGroup(MainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(MainMenuPanelLayout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addComponent(menuLbl))
-                    .addGroup(MainMenuPanelLayout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(addDocBtn)))
+                .addGap(154, 154, 154)
+                .addComponent(menuLbl)
                 .addContainerGap(162, Short.MAX_VALUE))
+            .addGroup(MainMenuPanelLayout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(addDocBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(viewDocBtn)
+                .addGap(64, 64, 64))
         );
         MainMenuPanelLayout.setVerticalGroup(
             MainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -69,7 +81,9 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(menuLbl)
                 .addGap(67, 67, 67)
-                .addComponent(addDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(MainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(358, Short.MAX_VALUE))
         );
 
@@ -93,6 +107,12 @@ public class MainMenu extends javax.swing.JFrame {
         JFrame.setVisible(true);
 
     }//GEN-LAST:event_addDocBtnActionPerformed
+
+    private void viewDocBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewDocBtnActionPerformed
+        dispose();
+        ViewDoc JFrame =new ViewDoc();
+        JFrame.setVisible(true);
+    }//GEN-LAST:event_viewDocBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,5 +153,6 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JPanel MainMenuPanel;
     private javax.swing.JButton addDocBtn;
     private javax.swing.JLabel menuLbl;
+    private javax.swing.JButton viewDocBtn;
     // End of variables declaration//GEN-END:variables
 }
