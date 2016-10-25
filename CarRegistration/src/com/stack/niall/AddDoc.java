@@ -343,7 +343,6 @@ public class AddDoc extends javax.swing.JFrame {
                  
 				
          coll.insert(doc);
-         //System.out.println("Document inserted successfully");
          JOptionPane.showMessageDialog(null, "Document inserted successfully");
 
          manufacturerTxt.setText("");

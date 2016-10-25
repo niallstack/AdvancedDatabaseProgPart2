@@ -31,6 +31,7 @@ public class MainMenu extends javax.swing.JFrame {
         menuLbl = new javax.swing.JLabel();
         addDocBtn = new javax.swing.JButton();
         viewDocBtn = new javax.swing.JButton();
+        deleteDocBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,6 +45,8 @@ public class MainMenu extends javax.swing.JFrame {
         addDocBtn.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         addDocBtn.setForeground(new java.awt.Color(0, 153, 153));
         addDocBtn.setText("Add Documents");
+        addDocBtn.setMaximumSize(new java.awt.Dimension(159, 35));
+        addDocBtn.setMinimumSize(new java.awt.Dimension(159, 35));
         addDocBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addDocBtnActionPerformed(evt);
@@ -60,6 +63,16 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        deleteDocBtn.setBackground(new java.awt.Color(255, 255, 255));
+        deleteDocBtn.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        deleteDocBtn.setForeground(new java.awt.Color(0, 153, 153));
+        deleteDocBtn.setText("Delete Documents");
+        deleteDocBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteDocBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout MainMenuPanelLayout = new javax.swing.GroupLayout(MainMenuPanel);
         MainMenuPanel.setLayout(MainMenuPanelLayout);
         MainMenuPanelLayout.setHorizontalGroup(
@@ -68,23 +81,27 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGap(154, 154, 154)
                 .addComponent(menuLbl)
                 .addContainerGap(162, Short.MAX_VALUE))
-            .addGroup(MainMenuPanelLayout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(addDocBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(viewDocBtn)
-                .addGap(64, 64, 64))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainMenuPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(MainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(deleteDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(MainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(viewDocBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(addDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(342, 342, 342))
         );
         MainMenuPanelLayout.setVerticalGroup(
             MainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainMenuPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(menuLbl)
-                .addGap(67, 67, 67)
-                .addGroup(MainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(viewDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(358, Short.MAX_VALUE))
+                .addGap(73, 73, 73)
+                .addComponent(addDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(viewDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(deleteDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(208, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -113,6 +130,12 @@ public class MainMenu extends javax.swing.JFrame {
         ViewDoc JFrame =new ViewDoc();
         JFrame.setVisible(true);
     }//GEN-LAST:event_viewDocBtnActionPerformed
+
+    private void deleteDocBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteDocBtnActionPerformed
+        dispose();
+        DeleteDoc JFrame =new DeleteDoc();
+        JFrame.setVisible(true);
+    }//GEN-LAST:event_deleteDocBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,6 +175,7 @@ public class MainMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MainMenuPanel;
     private javax.swing.JButton addDocBtn;
+    private javax.swing.JButton deleteDocBtn;
     private javax.swing.JLabel menuLbl;
     private javax.swing.JButton viewDocBtn;
     // End of variables declaration//GEN-END:variables

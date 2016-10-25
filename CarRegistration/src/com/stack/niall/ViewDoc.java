@@ -46,6 +46,7 @@ public class ViewDoc extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         addDocLbl = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -65,6 +66,9 @@ public class ViewDoc extends javax.swing.JFrame {
         manualBtn = new javax.swing.JButton();
         yearAfterBtn = new javax.swing.JButton();
         backBtn = new javax.swing.JButton();
+        viewAllBtn1 = new javax.swing.JButton();
+
+        jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -142,6 +146,8 @@ public class ViewDoc extends javax.swing.JFrame {
         yearBeforeBtn.setBackground(new java.awt.Color(255, 255, 255));
         yearBeforeBtn.setForeground(new java.awt.Color(0, 153, 153));
         yearBeforeBtn.setText("Pre-2000");
+        yearBeforeBtn.setMaximumSize(new java.awt.Dimension(88, 32));
+        yearBeforeBtn.setMinimumSize(new java.awt.Dimension(88, 32));
         yearBeforeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 yearBeforeBtnActionPerformed(evt);
@@ -170,10 +176,20 @@ public class ViewDoc extends javax.swing.JFrame {
         backBtn.setBackground(new java.awt.Color(255, 255, 255));
         backBtn.setForeground(new java.awt.Color(0, 153, 153));
         backBtn.setText("<");
-        backBtn.setActionCommand("<");
         backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backBtnActionPerformed(evt);
+            }
+        });
+
+        viewAllBtn1.setBackground(new java.awt.Color(255, 255, 255));
+        viewAllBtn1.setForeground(new java.awt.Color(0, 153, 153));
+        viewAllBtn1.setText("View All");
+        viewAllBtn1.setMaximumSize(new java.awt.Dimension(88, 32));
+        viewAllBtn1.setMinimumSize(new java.awt.Dimension(88, 32));
+        viewAllBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewAllBtn1ActionPerformed(evt);
             }
         });
 
@@ -181,51 +197,57 @@ public class ViewDoc extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 706, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(backBtn)
-                        .addGap(189, 189, 189)
-                        .addComponent(addDocLbl))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(viewBasicBtn)
-                            .addComponent(yearAfterBtn))
-                        .addGap(115, 115, 115)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(yearBeforeBtn)
-                            .addComponent(manualBtn))
-                        .addGap(63, 63, 63)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
+                                .addContainerGap()
+                                .addComponent(backBtn)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(88, 88, 88)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(viewAllBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(yearAfterBtn)
+                                    .addComponent(viewBasicBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(searchIDBtn)
-                                    .addComponent(manBtn)
-                                    .addComponent(fuelBtn))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(IDLbl)
-                                            .addGap(158, 158, 158))
-                                        .addComponent(IDTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(manTxt, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addComponent(fuelTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
-                                .addComponent(IDLbl1))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(92, 92, 92)
-                                .addComponent(IDLbl2)))))
-                .addContainerGap(138, Short.MAX_VALUE))
+                                    .addComponent(yearBeforeBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(manualBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(128, 128, 128)
+                                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(84, 84, 84)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(manBtn)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(manTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(fuelBtn)
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(fuelTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                .addComponent(IDLbl2)
+                                                .addGap(62, 62, 62))))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(IDLbl1)
+                                        .addGap(48, 48, 48))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(IDLbl)
+                                        .addGap(88, 88, 88))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(searchIDBtn)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(IDTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(addDocLbl)
+                                .addGap(246, 246, 246)))
+                        .addGap(0, 163, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,8 +261,7 @@ public class ViewDoc extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSeparator2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                        .addComponent(jSeparator2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -250,7 +271,7 @@ public class ViewDoc extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(IDTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(searchIDBtn))
-                                .addGap(18, 18, 18)
+                                .addGap(22, 22, 22)
                                 .addComponent(IDLbl1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -265,25 +286,28 @@ public class ViewDoc extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(60, 60, 60)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(viewBasicBtn)
-                                    .addComponent(yearBeforeBtn))
+                                    .addComponent(yearBeforeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(viewAllBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(34, 34, 34)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(yearAfterBtn)
-                                    .addComponent(manualBtn))))
-                        .addGap(32, 115, Short.MAX_VALUE)))
+                                    .addComponent(manualBtn))
+                                .addGap(31, 31, 31)
+                                .addComponent(viewBasicBtn)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(12, 12, 12))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -374,6 +398,14 @@ public class ViewDoc extends javax.swing.JFrame {
         JFrame.setVisible(true);
     }//GEN-LAST:event_backBtnActionPerformed
 
+    private void viewAllBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAllBtn1ActionPerformed
+        DBCursor cursor = coll.find();
+        viewTxtArea.setText("");
+        while(cursor.hasNext()) {
+            viewTxtArea.append(cursor.next().toString()+"\n");
+        }
+    }//GEN-LAST:event_viewAllBtn1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -421,6 +453,7 @@ public class ViewDoc extends javax.swing.JFrame {
     private javax.swing.JButton backBtn;
     private javax.swing.JButton fuelBtn;
     private javax.swing.JTextField fuelTxt;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator2;
@@ -428,6 +461,7 @@ public class ViewDoc extends javax.swing.JFrame {
     private javax.swing.JTextField manTxt;
     private javax.swing.JButton manualBtn;
     private javax.swing.JButton searchIDBtn;
+    private javax.swing.JButton viewAllBtn1;
     private javax.swing.JButton viewBasicBtn;
     private javax.swing.JTextArea viewTxtArea;
     private javax.swing.JButton yearAfterBtn;
