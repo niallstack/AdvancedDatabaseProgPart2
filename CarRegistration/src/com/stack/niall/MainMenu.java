@@ -33,6 +33,7 @@ public class MainMenu extends javax.swing.JFrame {
         viewDocBtn = new javax.swing.JButton();
         deleteDocBtn = new javax.swing.JButton();
         updateDocBtn = new javax.swing.JButton();
+        mapReduceBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,6 +85,16 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        mapReduceBtn.setBackground(new java.awt.Color(255, 255, 255));
+        mapReduceBtn.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        mapReduceBtn.setForeground(new java.awt.Color(0, 153, 153));
+        mapReduceBtn.setText("Map Reduce");
+        mapReduceBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mapReduceBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout MainMenuPanelLayout = new javax.swing.GroupLayout(MainMenuPanel);
         MainMenuPanel.setLayout(MainMenuPanelLayout);
         MainMenuPanelLayout.setHorizontalGroup(
@@ -94,11 +105,12 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(162, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainMenuPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(MainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(deleteDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(viewDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updateDocBtn, javax.swing.GroupLayout.Alignment.LEADING))
+                .addGroup(MainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(deleteDocBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                    .addComponent(viewDocBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                    .addComponent(addDocBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                    .addComponent(updateDocBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(mapReduceBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(331, 331, 331))
         );
         MainMenuPanelLayout.setVerticalGroup(
@@ -114,7 +126,9 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(deleteDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(updateDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(mapReduceBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -156,6 +170,12 @@ public class MainMenu extends javax.swing.JFrame {
         JFrame.setVisible(true);
     }//GEN-LAST:event_updateDocBtnActionPerformed
 
+    private void mapReduceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mapReduceBtnActionPerformed
+        dispose();
+        MapReduce JFrame =new MapReduce();
+        JFrame.setVisible(true);
+    }//GEN-LAST:event_mapReduceBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -195,6 +215,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JPanel MainMenuPanel;
     private javax.swing.JButton addDocBtn;
     private javax.swing.JButton deleteDocBtn;
+    private javax.swing.JButton mapReduceBtn;
     private javax.swing.JLabel menuLbl;
     private javax.swing.JButton updateDocBtn;
     private javax.swing.JButton viewDocBtn;
