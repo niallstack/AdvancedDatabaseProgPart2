@@ -69,7 +69,6 @@ public class AddDoc extends javax.swing.JFrame {
         ownerTxt = new javax.swing.JTextField();
         ownerAddressTxt = new javax.swing.JTextField();
         writtenOffTxt = new javax.swing.JTextField();
-        backBtn = new javax.swing.JButton();
         backBtn1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -148,16 +147,6 @@ public class AddDoc extends javax.swing.JFrame {
             }
         });
 
-        backBtn.setBackground(new java.awt.Color(255, 255, 255));
-        backBtn.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        backBtn.setForeground(new java.awt.Color(0, 102, 102));
-        backBtn.setText("Back");
-        backBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backBtnActionPerformed(evt);
-            }
-        });
-
         backBtn1.setBackground(new java.awt.Color(255, 255, 255));
         backBtn1.setForeground(new java.awt.Color(0, 153, 153));
         backBtn1.setText("<");
@@ -172,58 +161,54 @@ public class AddDoc extends javax.swing.JFrame {
         addDocPnlLayout.setHorizontalGroup(
             addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addDocPnlLayout.createSequentialGroup()
-                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addContainerGap()
+                .addComponent(backBtn1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(addDocPnlLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(backBtn1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                         .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(regLbl)
+                            .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(manufacturerLbl, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(modelLbl))
+                            .addComponent(engSizeLbl)
+                            .addComponent(yearLbl)
+                            .addComponent(colourLbl)
+                            .addComponent(fuelTypeLbl))
+                        .addGap(41, 41, 41)
+                        .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(manufacturerTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(regTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(modelTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(engSizeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(yearTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(colourTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fuelTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(addDocPnlLayout.createSequentialGroup()
-                                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(regLbl)
-                                    .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(manufacturerLbl, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(modelLbl))
-                                    .addComponent(engSizeLbl)
-                                    .addComponent(yearLbl)
-                                    .addComponent(colourLbl)
-                                    .addComponent(fuelTypeLbl))
-                                .addGap(41, 41, 41)
-                                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(manufacturerTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(regTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(modelTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(engSizeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(yearTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(colourTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(fuelTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(addDocPnlLayout.createSequentialGroup()
-                                        .addGap(20, 20, 20)
-                                        .addComponent(addDocLbl))))
-                            .addGroup(addDocPnlLayout.createSequentialGroup()
-                                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(transLbl)
-                                    .addComponent(vinLbl)
-                                    .addComponent(ownerIDLbl)
-                                    .addComponent(ownerLbl)
-                                    .addComponent(ownerAddLbl)
-                                    .addComponent(writtenOffLbl))
-                                .addGap(24, 24, 24)
-                                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(vinTxt)
-                                        .addComponent(tranTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(ownerIDTxt)
-                                        .addComponent(ownerTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
-                                        .addComponent(writtenOffTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(ownerAddressTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGap(20, 20, 20)
+                                .addComponent(addDocLbl))))
                     .addGroup(addDocPnlLayout.createSequentialGroup()
-                        .addGap(119, 119, 119)
-                        .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42)))
+                        .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(transLbl)
+                            .addComponent(vinLbl)
+                            .addComponent(ownerIDLbl)
+                            .addComponent(ownerLbl)
+                            .addComponent(ownerAddLbl)
+                            .addComponent(writtenOffLbl))
+                        .addGap(24, 24, 24)
+                        .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(vinTxt)
+                                .addComponent(tranTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ownerIDTxt)
+                                .addComponent(ownerTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
+                                .addComponent(writtenOffTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ownerAddressTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(81, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addDocPnlLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(273, 273, 273))
         );
         addDocPnlLayout.setVerticalGroup(
             addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -285,11 +270,9 @@ public class AddDoc extends javax.swing.JFrame {
                 .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(writtenOffLbl)
                     .addComponent(writtenOffTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
-                .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -364,12 +347,6 @@ public class AddDoc extends javax.swing.JFrame {
       }
     }//GEN-LAST:event_submitBtnActionPerformed
 
-    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
-        dispose();
-        MainMenu JFrame =new MainMenu();
-        JFrame.setVisible(true);
-    }//GEN-LAST:event_backBtnActionPerformed
-
     private void backBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtn1ActionPerformed
         dispose();
         MainMenu JFrame =new MainMenu();
@@ -418,7 +395,6 @@ public class AddDoc extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel addDocLbl;
     private javax.swing.JPanel addDocPnl;
-    private javax.swing.JButton backBtn;
     private javax.swing.JButton backBtn1;
     private javax.swing.JLabel colourLbl;
     private javax.swing.JTextField colourTxt;

@@ -32,6 +32,7 @@ public class MainMenu extends javax.swing.JFrame {
         addDocBtn = new javax.swing.JButton();
         viewDocBtn = new javax.swing.JButton();
         deleteDocBtn = new javax.swing.JButton();
+        updateDocBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,6 +74,16 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        updateDocBtn.setBackground(new java.awt.Color(255, 255, 255));
+        updateDocBtn.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        updateDocBtn.setForeground(new java.awt.Color(0, 153, 153));
+        updateDocBtn.setText("Update Documents");
+        updateDocBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateDocBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout MainMenuPanelLayout = new javax.swing.GroupLayout(MainMenuPanel);
         MainMenuPanel.setLayout(MainMenuPanelLayout);
         MainMenuPanelLayout.setHorizontalGroup(
@@ -84,11 +95,11 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainMenuPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(MainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(deleteDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(MainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(viewDocBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(addDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(342, 342, 342))
+                    .addComponent(deleteDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateDocBtn, javax.swing.GroupLayout.Alignment.LEADING))
+                .addGap(331, 331, 331))
         );
         MainMenuPanelLayout.setVerticalGroup(
             MainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,9 +110,11 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(addDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(viewDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(deleteDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(208, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(updateDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(131, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -136,6 +149,12 @@ public class MainMenu extends javax.swing.JFrame {
         DeleteDoc JFrame =new DeleteDoc();
         JFrame.setVisible(true);
     }//GEN-LAST:event_deleteDocBtnActionPerformed
+
+    private void updateDocBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateDocBtnActionPerformed
+        dispose();
+        UpdateDoc JFrame =new UpdateDoc();
+        JFrame.setVisible(true);
+    }//GEN-LAST:event_updateDocBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,6 +196,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton addDocBtn;
     private javax.swing.JButton deleteDocBtn;
     private javax.swing.JLabel menuLbl;
+    private javax.swing.JButton updateDocBtn;
     private javax.swing.JButton viewDocBtn;
     // End of variables declaration//GEN-END:variables
 }

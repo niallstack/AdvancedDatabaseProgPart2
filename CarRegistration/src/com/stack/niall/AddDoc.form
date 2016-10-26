@@ -50,71 +50,65 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="backBtn1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="26" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="backBtn1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="26" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="regLbl" min="-2" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="manufacturerLbl" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="modelLbl" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="engSizeLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="yearLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="colourLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="fuelTypeLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="41" pref="41" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="manufacturerTxt" alignment="0" min="-2" pref="328" max="-2" attributes="0"/>
-                                      <Component id="regTxt" min="-2" pref="328" max="-2" attributes="0"/>
-                                      <Component id="modelTxt" min="-2" pref="379" max="-2" attributes="0"/>
-                                      <Component id="engSizeTxt" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
-                                      <Component id="yearTxt" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
-                                      <Component id="colourTxt" alignment="0" min="-2" pref="190" max="-2" attributes="0"/>
-                                      <Component id="fuelTxt" alignment="0" min="-2" pref="190" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                                          <Component id="addDocLbl" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                              <Component id="regLbl" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="manufacturerLbl" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="modelLbl" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="engSizeLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="yearLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="colourLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="fuelTypeLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="41" pref="41" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="manufacturerTxt" alignment="0" min="-2" pref="328" max="-2" attributes="0"/>
+                              <Component id="regTxt" min="-2" pref="328" max="-2" attributes="0"/>
+                              <Component id="modelTxt" min="-2" pref="379" max="-2" attributes="0"/>
+                              <Component id="engSizeTxt" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
+                              <Component id="yearTxt" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
+                              <Component id="colourTxt" alignment="0" min="-2" pref="190" max="-2" attributes="0"/>
+                              <Component id="fuelTxt" alignment="0" min="-2" pref="190" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="transLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="vinLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="ownerIDLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="ownerLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="ownerAddLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="writtenOffLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="vinTxt" max="32767" attributes="0"/>
-                                          <Component id="tranTxt" min="-2" pref="188" max="-2" attributes="0"/>
-                                          <Component id="ownerIDTxt" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="ownerTxt" pref="379" max="32767" attributes="0"/>
-                                          <Component id="writtenOffTxt" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="ownerAddressTxt" min="-2" pref="417" max="-2" attributes="0"/>
-                                  </Group>
+                                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="addDocLbl" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
-                          <Component id="backBtn" min="-2" pref="155" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="submitBtn" min="-2" pref="155" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="transLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="vinLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="ownerIDLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="ownerLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="ownerAddLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="writtenOffLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="vinTxt" max="32767" attributes="0"/>
+                                  <Component id="tranTxt" min="-2" pref="188" max="-2" attributes="0"/>
+                                  <Component id="ownerIDTxt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="ownerTxt" pref="379" max="32767" attributes="0"/>
+                                  <Component id="writtenOffTxt" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="ownerAddressTxt" min="-2" pref="417" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <EmptySpace pref="81" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="submitBtn" min="-2" pref="155" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="273" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -193,12 +187,9 @@
                       <Component id="writtenOffLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="writtenOffTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="118" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="submitBtn" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                      <Component id="backBtn" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                  <EmptySpace pref="95" max="32767" attributes="0"/>
+                  <Component id="submitBtn" min="-2" pref="60" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -403,23 +394,6 @@
         <Component class="javax.swing.JTextField" name="ownerAddressTxt">
         </Component>
         <Component class="javax.swing.JTextField" name="writtenOffTxt">
-        </Component>
-        <Component class="javax.swing.JButton" name="backBtn">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="16" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="66" red="0" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Back"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backBtnActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="backBtn1">
           <Properties>
