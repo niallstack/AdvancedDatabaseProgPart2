@@ -16,6 +16,7 @@ import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.ParallelScanOptions;
 import com.mongodb.ServerAddress;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 import org.bson.types.ObjectId;
 
@@ -24,9 +25,11 @@ import org.bson.types.ObjectId;
  * @author Niall
  */
 public class UpdateDoc extends javax.swing.JFrame {
+        // Connecting to the mongodb server
         MongoClient mongoClient = new MongoClient( "localhost" , 27017 );
+        // Connecting to the databases
         DB db = mongoClient.getDB( "CarRegistration" );
-        
+        // Connecting to the collection
         DBCollection coll = db.getCollection("Cars");
 
     /**
@@ -34,6 +37,11 @@ public class UpdateDoc extends javax.swing.JFrame {
      */
     public UpdateDoc() {
         initComponents();
+        setIcon();
+    }
+    private void setIcon() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("rsalogo.png")));
     }
 
     /**
@@ -61,6 +69,7 @@ public class UpdateDoc extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Car Registration - Update");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -132,12 +141,10 @@ public class UpdateDoc extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(backBtn1)
                         .addGap(310, 310, 310)
                         .addComponent(addDocLbl)
@@ -161,11 +168,8 @@ public class UpdateDoc extends javax.swing.JFrame {
                         .addGap(41, 41, 41)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(valueTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(IDTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(fieldTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(32, 32, 32)))
+                            .addComponent(IDTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fieldTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(242, 242, 242))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -218,37 +222,41 @@ public class UpdateDoc extends javax.swing.JFrame {
 
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
         try{
-
-            // To connect to mongodb server
-            MongoClient mongoClient = new MongoClient( "localhost" , 27017 );
-
-            // Now connect to your databases
+            // Connecting to the mongodb server
+            MongoClient mongoClient = new MongoClient( "localhost" , 27017 );		
+            // Connecting to the databases
             DB db = mongoClient.getDB( "CarRegistration" );
-            System.out.println("Connect to database successfully");
-
+            // Connecting to the collection
             DBCollection coll = db.getCollection("Cars");
-            System.out.println("Collection Cars selected successfully");
-
-            //BasicDBObject doc = new BasicDBObject("Manufacturer", fieldTxt.getText()).
-            //append("Model", valueTxt.getText());
+            
+            //Creating DBObject
             BasicDBObject newDocument = new BasicDBObject();
+            //Getting field from text box
             String field = fieldTxt.getText();
+            //Getting value from text box
             String value = valueTxt.getText();
+            //Getting ID from text box
             String carID = IDTxt.getText(); 
+            //Edit previous document using $set
             newDocument.append("$set", new BasicDBObject().append(field, value));
             
+            //Create query
             BasicDBObject searchQuery = new BasicDBObject().append("_id", new ObjectId(carID));
-
+            
+            //Update database 
             coll.update(searchQuery, newDocument);
 
-            //coll.insert(doc);
+            //Display confirmation dialog
             JOptionPane.showMessageDialog(null, "Document updated successfully");
 
             fieldTxt.setText("");
             valueTxt.setText("");
             IDTxt.setText("");
+            //Searches the collection with the PUT request
             DBCursor cursor = coll.find();
+            //Wipes the text area
             viewDeleteTxtArea.setText("");
+            //Insert the results of the query into the text area
             while(cursor.hasNext()) {
                 viewDeleteTxtArea.append(cursor.next().toString()+"\n");
             }
@@ -264,8 +272,11 @@ public class UpdateDoc extends javax.swing.JFrame {
     }//GEN-LAST:event_fieldTxtActionPerformed
 
     private void viewAllBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAllBtn1ActionPerformed
+        //Searches the collection with the PUT request
         DBCursor cursor = coll.find();
+        //Wipes the text area
         viewDeleteTxtArea.setText("");
+        //Insert the results of the query into the text area
         while(cursor.hasNext()) {
             viewDeleteTxtArea.append(cursor.next().toString()+"\n");
         }

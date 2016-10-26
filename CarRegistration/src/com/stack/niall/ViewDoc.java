@@ -16,6 +16,7 @@ import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.ParallelScanOptions;
 import com.mongodb.ServerAddress;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 import org.bson.types.ObjectId;
 
@@ -24,9 +25,11 @@ import org.bson.types.ObjectId;
  * @author niall
  */
 public class ViewDoc extends javax.swing.JFrame {
+        // Connecting to the mongodb server
         MongoClient mongoClient = new MongoClient( "localhost" , 27017 );
+        // Connecting to the databases
         DB db = mongoClient.getDB( "CarRegistration" );
-        
+        // Connecting to the collection
         DBCollection coll = db.getCollection("Cars");
         
 
@@ -35,6 +38,11 @@ public class ViewDoc extends javax.swing.JFrame {
      */
     public ViewDoc() {
         initComponents();
+        setIcon();
+    }
+    private void setIcon() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("rsalogo.png")));
     }
 
     /**
@@ -71,6 +79,7 @@ public class ViewDoc extends javax.swing.JFrame {
         jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Car Registration - View");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -211,7 +220,7 @@ public class ViewDoc extends javax.swing.JFrame {
                                     .addComponent(viewAllBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(yearAfterBtn)
                                     .addComponent(viewBasicBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(yearBeforeBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(manualBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -245,7 +254,7 @@ public class ViewDoc extends javax.swing.JFrame {
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(addDocLbl)
                                 .addGap(246, 246, 246)))
-                        .addGap(0, 163, Short.MAX_VALUE))
+                        .addGap(0, 154, Short.MAX_VALUE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
@@ -304,10 +313,7 @@ public class ViewDoc extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -327,66 +333,96 @@ public class ViewDoc extends javax.swing.JFrame {
     }//GEN-LAST:event_viewBasicBtnActionPerformed
 
     private void searchIDBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchIDBtnActionPerformed
-        
+        //Creating query
         BasicDBObject whereQuery = new BasicDBObject();
+        //Getting ID from text box
         String carID = IDTxt.getText();
+        //Creating PUT request
         whereQuery.put("_id", new ObjectId(carID));
+        //Searches the collection with the PUT request
         DBCursor cursor = coll.find(whereQuery);
+        //Wipes the text area
         viewTxtArea.setText("");
+        //Insert the results of the query into the text area
         while(cursor.hasNext()) {
             viewTxtArea.append(cursor.next().toString()+"\n");
         }
     }//GEN-LAST:event_searchIDBtnActionPerformed
 
     private void manBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manBtnActionPerformed
+        //Creating query
         BasicDBObject whereQuery = new BasicDBObject();
+        //Getting manufacturer from text box
         String manufacturer = manTxt.getText();
+        //Creating PUT request
         whereQuery.put("Manufacturer", manufacturer);
+        //Searches the collection with the PUT request
         DBCursor cursor = coll.find(whereQuery);
+        //Wipes the text area
         viewTxtArea.setText("");
+        //Insert the results of the query into the text area
         while(cursor.hasNext()) {
             viewTxtArea.append(cursor.next().toString()+"\n");
         }
     }//GEN-LAST:event_manBtnActionPerformed
 
     private void fuelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fuelBtnActionPerformed
+        //Creating query
         BasicDBObject whereQuery = new BasicDBObject();
+        //Getting fuel type from text box
         String fuelType = fuelTxt.getText();
+        //Creating PUT request
         whereQuery.put("FuelType", fuelType);
+        //Searches the collection with the PUT request
         DBCursor cursor = coll.find(whereQuery);
+        //Wipes the text area
         viewTxtArea.setText("");
+        //Insert the results of the query into the text area
         while(cursor.hasNext()) {
             viewTxtArea.append(cursor.next().toString()+"\n");
         }
     }//GEN-LAST:event_fuelBtnActionPerformed
 
     private void yearBeforeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yearBeforeBtnActionPerformed
+        //Creating query
         BasicDBObject whereQuery = new BasicDBObject();
-        //String fuelType = fuelTxt.getText();
+        //Creating PUT request
         whereQuery.put("Year", new BasicDBObject("$lt", 2000));
+        //Searches the collection with the PUT request
         DBCursor cursor = coll.find(whereQuery);
+        //Wipes the text area
         viewTxtArea.setText("");
+        //Insert the results of the query into the text area
         while(cursor.hasNext()) {
             viewTxtArea.append(cursor.next().toString()+"\n");
         }
     }//GEN-LAST:event_yearBeforeBtnActionPerformed
 
     private void manualBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manualBtnActionPerformed
+        //Creating query
         BasicDBObject whereQuery = new BasicDBObject();
+        //Creating PUT request
         whereQuery.put("Transmission", "Manual");
+        //Searches the collection with the PUT request
         DBCursor cursor = coll.find(whereQuery);
+        //Wipes the text area
         viewTxtArea.setText("");
+        //Insert the results of the query into the text area
         while(cursor.hasNext()) {
             viewTxtArea.append(cursor.next().toString()+"\n");
         }
     }//GEN-LAST:event_manualBtnActionPerformed
 
     private void yearAfterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yearAfterBtnActionPerformed
+        //Creating query
         BasicDBObject whereQuery = new BasicDBObject();
-        //String fuelType = fuelTxt.getText();
+        //Creating PUT request
         whereQuery.put("Year", new BasicDBObject("$gt", 2000));
+        //Searches the collection with the PUT request
         DBCursor cursor = coll.find(whereQuery);
+        //Wipes the text area
         viewTxtArea.setText("");
+        //Insert the results of the query into the text area
         while(cursor.hasNext()) {
             viewTxtArea.append(cursor.next().toString()+"\n");
         }
@@ -399,8 +435,11 @@ public class ViewDoc extends javax.swing.JFrame {
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void viewAllBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAllBtn1ActionPerformed
+        //Searches the collection with the PUT request
         DBCursor cursor = coll.find();
+        //Wipes the text area
         viewTxtArea.setText("");
+        //Insert the results of the query into the text area
         while(cursor.hasNext()) {
             viewTxtArea.append(cursor.next().toString()+"\n");
         }

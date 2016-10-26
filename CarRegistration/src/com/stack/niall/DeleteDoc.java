@@ -16,6 +16,7 @@ import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.ParallelScanOptions;
 import com.mongodb.ServerAddress;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 import org.bson.types.ObjectId;
 /**
@@ -23,14 +24,22 @@ import org.bson.types.ObjectId;
  * @author niall
  */
 public class DeleteDoc extends javax.swing.JFrame { 
+        // Connecting to the mongodb server
         MongoClient mongoClient = new MongoClient( "localhost" , 27017 );
+        // Connecting to the databases
         DB db = mongoClient.getDB( "CarRegistration" );
+        // Connecting to the collection
         DBCollection coll = db.getCollection("Cars");
     /**
      * Creates new form DeleteDoc
      */
     public DeleteDoc() {
         initComponents();
+        setIcon();
+    }
+    private void setIcon() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("rsalogo.png")));
     }
 
     /**
@@ -53,6 +62,7 @@ public class DeleteDoc extends javax.swing.JFrame {
         deleteBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Car Registration - Delete");
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -175,24 +185,34 @@ public class DeleteDoc extends javax.swing.JFrame {
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void viewAllBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAllBtn1ActionPerformed
+        //Searches the collection with the PUT request
         DBCursor cursor = coll.find();
+        //Wipes the text area
         viewDeleteTxtArea.setText("");
+        //Insert the results of the query into the text area
         while(cursor.hasNext()) {
             viewDeleteTxtArea.append(cursor.next().toString()+"\n");
         }
     }//GEN-LAST:event_viewAllBtn1ActionPerformed
 
     private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
+        //Creating new DB object
         BasicDBObject document = new BasicDBObject();
-        //document.put("number", 2);
+        //Getting ID from text box
         String carID = IDTxt.getText();
+        //Creating PUT request
         document.put("_id", new ObjectId(carID));
+        //Deleting document from collection
         coll.remove(document);
+        //Searches the collection with the PUT request
         DBCursor cursor = coll.find();
+        //Wipes the text area
         viewDeleteTxtArea.setText("");
+        //Insert the results of the query into the text area
         while(cursor.hasNext()) {
             viewDeleteTxtArea.append(cursor.next().toString()+"\n");
         }
+        //Display confirmation dialog
         JOptionPane.showMessageDialog(null, "Document removed successfully");
     }//GEN-LAST:event_deleteBtnActionPerformed
 

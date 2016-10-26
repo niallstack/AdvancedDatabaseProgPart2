@@ -18,6 +18,7 @@ import com.mongodb.MapReduceOutput;
 import com.mongodb.MongoClient;
 import com.mongodb.ParallelScanOptions;
 import com.mongodb.ServerAddress;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 import org.bson.types.ObjectId;
 
@@ -26,14 +27,22 @@ import org.bson.types.ObjectId;
  * @author niall
  */
 public class MapReduce extends javax.swing.JFrame {
+        // Connecting to the mongodb server
         MongoClient mongoClient = new MongoClient( "localhost" , 27017 );
+        // Connecting to the databases
         DB db = mongoClient.getDB( "CarRegistration" );
+        // Connecting to the collection
         DBCollection coll = db.getCollection("Cars");
     /**
      * Creates new form MapReduce
      */
     public MapReduce() {
         initComponents();
+        setIcon();
+    }
+    private void setIcon() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("rsalogo.png")));
     }
 
     /**
@@ -54,6 +63,7 @@ public class MapReduce extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Car Registration - Mapreduce");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -76,6 +86,7 @@ public class MapReduce extends javax.swing.JFrame {
         viewTxtArea.setEditable(false);
         jScrollPane1.setViewportView(viewTxtArea);
 
+        mapRedFunBtn.setBackground(new java.awt.Color(255, 255, 255));
         mapRedFunBtn.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         mapRedFunBtn.setForeground(new java.awt.Color(0, 153, 153));
         mapRedFunBtn.setText("Mapreduce Function");
@@ -85,6 +96,7 @@ public class MapReduce extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setForeground(new java.awt.Color(153, 153, 153));
         jLabel1.setText("(Displays all maufacturers in the database and how many models by each manufacturer)");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -147,26 +159,25 @@ public class MapReduce extends javax.swing.JFrame {
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void mapRedFunBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mapRedFunBtnActionPerformed
+        //Wipes the text area
+        viewTxtArea.setText("");
+        //Create map function
         String map = "function(doc) {\n" +"emit(this.Manufacturer,1)\n"+"}";
-        
+        //Create reduce function
         String reduce = "function(key,values){" + "\n"
                 + "return Array.sum(values)}";
-        
+        //Create a mapreduce command
         MapReduceCommand cmd = new MapReduceCommand(coll, map, reduce,
         null, MapReduceCommand.OutputType.INLINE, null);
- 
+        //Insert mapreduce command into collection
         MapReduceOutput out = coll.mapReduce(cmd);
-
+        
+        //Insert mapreduce into text area
         for (DBObject o : out.results()) {
             //System.out.println(o.toString());
             viewTxtArea.append(o.toString()+"\n");
         }
         
-        
-        /*viewTxtArea.setText("");
-        while(cursor.hasNext()) {
-            viewTxtArea.append(cursor.next().toString()+"\n");
-        }*/
     }//GEN-LAST:event_mapRedFunBtnActionPerformed
 
     /**

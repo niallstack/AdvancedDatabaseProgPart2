@@ -17,6 +17,7 @@ import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.ParallelScanOptions;
 import com.mongodb.ServerAddress;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 /**
  *
@@ -29,6 +30,11 @@ public class AddDoc extends javax.swing.JFrame {
      */
     public AddDoc() {
         initComponents();
+        setIcon();
+    }
+    private void setIcon() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("rsalogo.png")));
     }
 
     /**
@@ -72,6 +78,7 @@ public class AddDoc extends javax.swing.JFrame {
         backBtn1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Car Registration - Add");
 
         addDocPnl.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -163,7 +170,7 @@ public class AddDoc extends javax.swing.JFrame {
             .addGroup(addDocPnlLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(backBtn1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(addDocPnlLayout.createSequentialGroup()
                         .addGroup(addDocPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,7 +211,7 @@ public class AddDoc extends javax.swing.JFrame {
                                 .addComponent(ownerTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
                                 .addComponent(writtenOffTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(ownerAddressTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(80, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addDocPnlLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -279,9 +286,7 @@ public class AddDoc extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(addDocPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(addDocPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -300,16 +305,14 @@ public class AddDoc extends javax.swing.JFrame {
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
         try{
 		
-         // To connect to mongodb server
-         MongoClient mongoClient = new MongoClient( "localhost" , 27017 );
-			
-         // Now connect to your databases
+         // Connecting to the mongodb server
+         MongoClient mongoClient = new MongoClient( "localhost" , 27017 );		
+         // Connecting to the databases
          DB db = mongoClient.getDB( "CarRegistration" );
-         System.out.println("Connect to database successfully");
-         
+         // Connecting to the collection
          DBCollection coll = db.getCollection("Cars");
-         System.out.println("Collection Cars selected successfully");
          
+         // Creating a new document
           BasicDBObject doc = new BasicDBObject("Manufacturer", manufacturerTxt.getText()).
             append("Model", modelTxt.getText()).
             append("Registration", regTxt.getText()).
@@ -324,8 +327,9 @@ public class AddDoc extends javax.swing.JFrame {
             append("OwnerAddress", ownerAddressTxt.getText()).
             append("WrittenOff", writtenOffTxt.getText());
                  
-				
+	// Inserting the newly created document into the collection 			
          coll.insert(doc);
+         //Display confirmation dialog
          JOptionPane.showMessageDialog(null, "Document inserted successfully");
 
          manufacturerTxt.setText("");
