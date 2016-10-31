@@ -248,7 +248,8 @@ public class UpdateDoc extends javax.swing.JFrame {
 
             //Display confirmation dialog
             JOptionPane.showMessageDialog(null, "Document updated successfully");
-
+            
+            // Wipe text fields after update
             fieldTxt.setText("");
             valueTxt.setText("");
             IDTxt.setText("");

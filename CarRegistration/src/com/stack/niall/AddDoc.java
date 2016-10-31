@@ -331,7 +331,8 @@ public class AddDoc extends javax.swing.JFrame {
          coll.insert(doc);
          //Display confirmation dialog
          JOptionPane.showMessageDialog(null, "Document inserted successfully");
-
+         
+         // Wipe text boxes after insert
          manufacturerTxt.setText("");
          modelTxt.setText("");
          regTxt.setText("");

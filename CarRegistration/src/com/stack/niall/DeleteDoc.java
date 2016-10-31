@@ -214,6 +214,9 @@ public class DeleteDoc extends javax.swing.JFrame {
         }
         //Display confirmation dialog
         JOptionPane.showMessageDialog(null, "Document removed successfully");
+        
+        //Wipe the text field
+        IDTxt.setText("");
     }//GEN-LAST:event_deleteBtnActionPerformed
 
     /**
